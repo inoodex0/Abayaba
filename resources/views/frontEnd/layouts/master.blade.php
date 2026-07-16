@@ -80,7 +80,7 @@
                                 <div class="col-9">
                                     <div class="cart__sidebar__content">
                                         <div class="content__top">
-                                            <h5><a href="">{{ Str::limit($value->name, 30) }}</a></h5>
+                                            <h5><a href="" class="cart-prod-name">{{ Str::limit($value->name, 30) }}</a></h5>
                                             <button type="button" onclick="removeItem(this)"
                                                 class="remove-cart cart_remove" data-id="{{ $value->rowId }}">
                                                 <i class="fa-regular fa-trash-can"></i>

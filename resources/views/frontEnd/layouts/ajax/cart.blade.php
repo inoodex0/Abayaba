@@ -17,12 +17,12 @@
 
         <tbody>
          @foreach(Cart::instance('shopping')->content() as $value)
-         <tr>
-          <td>
-           <a onclick="removeItem(this)" href="javascript:void(0)" class="cart_removeeeeee" data-id="{{$value->rowId}}"><i class="fas fa-trash text-danger"></i></a>
-          </td>
-          <td class="text-left">
-           <a href="{{route('product',$value->options->slug)}}"> <img src="{{asset($value->options->image)}}" style="height:30px;width:30px" /> {{Str::limit($value->name,20)}}</a>
+          <tr>
+           <td data-label="Delete">
+            <a onclick="removeItem(this)" href="javascript:void(0)" class="cart_removeeeeee" data-id="{{$value->rowId}}"><i class="fas fa-trash text-danger"></i></a>
+           </td>
+           <td data-label="Product" class="text-left">
+            <a href="{{route('product',$value->options->slug)}}"> <img src="{{asset($value->options->image)}}" style="height:30px;width:30px" /> <span class="cart-product-name">{{Str::limit($value->name,20)}}</span></a>
            @if($value->options->product_size)
             <p>Size: {{$value->options->product_size}}</p>
            @endif

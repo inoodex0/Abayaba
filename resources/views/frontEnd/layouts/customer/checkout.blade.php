@@ -40,7 +40,7 @@ $shipping = Session::get('shipping') ? Session::get('shipping') : 0;
               @enderror
             </div>
             <div class="form-group mt-4">
-              <label for="name mb-2">Enter your phone number:</label>
+              <label for="phone">Enter your phone number:</label>
               <input type="text" minlength="11" maxlength="11" pattern="0[0-9]+"
                 title="Please enter a number starting with 0" name="phone" class="form-control"
                 value="{{ old('phone') }}" required />
@@ -74,22 +74,18 @@ $shipping = Session::get('shipping') ? Session::get('shipping') : 0;
               @enderror
             </div>
             <!-- Payment Method -->
-            <div class="col-sm-12">
-              <div class="radio_payment">
-                <label id="payment_method">Payment Method</label>
-                <div class="payment_option"></div>
+            <div class="payment-methods mt-4">
+              <label>Payment Method</label>
+              <div class="form-check p_cash">
+                <input
+                  class="form-check-input"
+                  type="radio" name="payment_method" id="inlineRadio1" value="Cash On Delivery" checked required />
+                <label class="form-check-label" for="inlineRadio1">
+                  Cash On Delivery
+                </label>
               </div>
-              <div class="payment-methods">
-                <div class="form-check p_cash d-flex space-x-4">
-                  <input
-                    class="form-check-input justify-content-center justify-content-center align-items-center align-self-center"
-                    type="radio" name="payment_method" id="inlineRadio1" value="Cash On Delivery" checked required />
-                  <label class="form-check-label ml-4" for="inlineRadio1">
-                    Cash On Delivery
-                  </label>
-                </div>
 
-                {{-- Future Payment Gateways --}}
+              {{-- Future Payment Gateways --}}
                 {{-- <div class="form-check p_bkash">
                                                 <input class="form-check-input" type="radio" name="payment_method"
                                                     id="inlineRadio2" value="bkash" required/>
@@ -102,15 +98,14 @@ $shipping = Session::get('shipping') ? Session::get('shipping') : 0;
                                             </div> --}}
 
               </div>
-            </div>
-            <div class="w-full d-flex justify-content-end mt-4 ms-auto">
-              <button class="theme-btn product_btn">Confirm Order</button>
+            <div class="d-flex justify-content-end mt-4">
+              <button class="theme-btn product_btn checkout-confirm-btn">Confirm Order</button>
             </div>
           </form>
         </div>
       </div>
       <div class="col-lg-6 mb-4">
-        <div class="card p-4">
+        <div class="card p-4 order-summary-card">
           <div class="card-header">
             <h5 class="mb-2">Order Summary</h5>
           </div>
@@ -127,15 +122,15 @@ $shipping = Session::get('shipping') ? Session::get('shipping') : 0;
               <tbody>
                 @foreach (Cart::instance('shopping')->content() as $value)
                 <tr>
-                  <td>
+                  <td data-label="Delete">
                     <a onclick="removeItem(this)" class="cart_remove" data-id="{{ $value->rowId }}">
                       <i class="fas fa-trash text-danger"></i>
                     </a>
                   </td>
-                  <td class="text-left">
+                  <td class="text-left" data-label="Product">
                     <a href="{{ route('product',  $value->options->slug) }}">
                       <img width="50px" src="{{ asset($value->options->image) }}" />
-                      {{ Str::limit($value->name, 20) }}
+                      <span class="cart-product-name">{{ Str::limit($value->name, 20) }}</span>
                     </a>
                     @if ($value->options->product_size)
                     <p>Size: {{ $value->options->product_size }}</p>
@@ -144,7 +139,7 @@ $shipping = Session::get('shipping') ? Session::get('shipping') : 0;
                     <p>Color: {{ $value->options->product_color }}</p>
                     @endif
                   </td>
-                  <td class="cart_qty">
+                  <td class="cart_qty" data-label="Qty">
                     <div class="qty-cart vcart-qty">
                       <div class="quantity">
                         <button class="minus cart_decrement" data-id="{{ $value->rowId }}"><i class="fa-solid fa-minus"></i></button>
@@ -153,7 +148,7 @@ $shipping = Session::get('shipping') ? Session::get('shipping') : 0;
                       </div>
                     </div>
                   </td>
-                  <td>
+                  <td data-label="Price">
                     <span class="currency">৳  </span><strong>{{ $value->price }}</strong>
                   </td>
                 </tr>
