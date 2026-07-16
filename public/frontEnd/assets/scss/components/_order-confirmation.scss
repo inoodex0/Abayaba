@@ -1,0 +1,204 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  00. Order confirmation CSS START
+/*----------------------------------------*/
+.order__confirmation {
+  background: var(--tp-common-white);
+  padding: 90px 0;
+  @media #{$xs} {
+    padding: 30px 0;
+  }
+  @media #{$sm} {
+    padding: 30px 0;
+  }
+  .order__card {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 30px;
+    @media #{$xs} {
+      padding: 10px;
+    }
+    @media #{$sm} {
+      padding-right: 10px;
+    }
+    .order__left {
+      margin-bottom: 30px;
+      .order__text {
+        margin-bottom: 30px;
+        h3 {
+          font-size: 50px;
+          color: var(--tp-text-title);
+          @media #{$xs} {
+            font-size: 30px;
+          }
+          @media #{$sm} {
+            font-size: 30px;
+          }
+        }
+        p {
+          font-size: 17px;
+          color: var(--tp-text-title);
+        }
+      }
+      .order__details {
+        h5 {
+          color: var(--tp-text-title);
+        }
+        .billing__text {
+          width: 60%;
+          @media #{$xs} {
+            width: 100%;
+          }
+          ul {
+            list-style: none;
+            li {
+              display: flex;
+              gap: 50px;
+              width: 100%;
+              span {
+                font-size: 16px;
+                flex: 1;
+                // border: 1px solid red;
+                &.d-title {
+                  min-width: 30%;
+                  width: 100%;
+                  font-size: 15px;
+                }
+
+                strong {
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+          .track__order {
+            margin-top: 30px;
+            a {
+              padding: 8px 20px;
+              border-radius: 20px;
+              text-align: center;
+              background-color: var(--tp-theme-1);
+              color: var(--tp-common-white);
+            }
+          }
+        }
+      }
+    }
+
+    .order__summery {
+      h3 {
+        margin-bottom: 20px;
+      }
+      .order__meta {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid var(--tp-border-1);
+        border-bottom: 1px solid var(--tp-border-1);
+        padding: 10px;
+        margin-bottom: 30px;
+        @media #{$xs} {
+          flex-direction: column;
+        }
+        .meta__item {
+          border-right: 1px solid var(--tp-border-1);
+          padding-right: 60px;
+
+          @media #{$xs} {
+            padding-right: 15px;
+            border-right: none;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--tp-border-1);
+          }
+          @media #{$sm} {
+            padding-right: 15px;
+          }
+          @media #{$md} {
+            padding-right: 15px;
+          }
+          @media #{$lg} {
+            padding-right: 15px;
+          }
+          @media #{$xl} {
+            padding-right: 15px;
+          }
+
+          &:last-child {
+            border-right: none;
+            @media #{$xs} {
+              border-bottom: none;
+            }
+          }
+
+          h6 {
+            color: var(--tp-text-title);
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+          }
+          p {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 0;
+          }
+        }
+      }
+      .order__products {
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--tp-border-1);
+        .product__item {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          align-items: center;
+          .item__left {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            .item__img {
+              overflow: hidden;
+              img {
+                width: 80px;
+                height: 80px;
+                border-radius: 10px;
+              }
+            }
+            .item__title {
+              h4 {
+                margin-bottom: 0;
+                font-size: 16px;
+              }
+              .quantity {
+                font-size: 12px;
+                color: var(--tp-text-title);
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .product__price {
+        padding-top: 10px;
+      }
+    }
+  }
+}
+
+.price__table {
+  border-bottom: 1px solid var(--tp-border-1);
+  padding-bottom: 10px;
+}
+.price__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    color: var(--tp-text-title);
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+}
+.text-bold {
+  font-weight: 700;
+}

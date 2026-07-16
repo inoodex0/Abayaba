@@ -1,0 +1,88 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  24. PROFILE CSS START
+/*----------------------------------------*/
+.profile__area {
+  padding-bottom: 60px;
+  .nav {
+    @media #{$xs} {
+      width: 100%;
+    }
+    @media #{$sm} {
+      width: 100%;
+    }
+    .profile__btn {
+      padding: 15px 0px;
+      text-align: left;
+      padding-left: 20px;
+      border: 1px solid var(--tp-border-1);
+      border-bottom: none;
+      width: 400px;
+      @media #{$xs} {
+        width: 100%;
+      }
+      @media #{$sm} {
+        width: 100%;
+      }
+      @media #{$md} {
+        width: 300px;
+      }
+      &:last-child {
+        border: 1px solid var(--tp-border-1);
+      }
+      &.active {
+        background: var(--tp-theme-1);
+        color: var(--tp-common-white);
+      }
+    }
+  }
+
+  .tab-content {
+    padding: 20px 60px;
+    // border: 1px solid #ddd;
+    width: 100%;
+    @media #{$xs} {
+      padding: 20px 0px;
+    }
+    @media #{$sm} {
+      padding: 20px 0px;
+    }
+    .tab-pane {
+      .profile__img {
+        overflow: hidden;
+        margin-bottom: 20px;
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid var(--tp-theme-1);
+        }
+      }
+      h3 {
+        font-size: 36px;
+        span {
+          color: var(--tp-theme-1);
+        }
+      }
+    }
+  }
+}
+
+.user__order {
+  .table {
+    border: 1px solid var(--tp-border-1);
+    padding: 15px !important;
+    button {
+      &.invoice {
+        padding: 3px 15px;
+        background: var(--tp-theme-1);
+        color: var(--tp-common-white);
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+

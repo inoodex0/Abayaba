@@ -1,0 +1,39 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  00. ICON SECTION CSS START
+/*----------------------------------------*/
+
+.icon__area {
+  background: var(--tp-theme-2);
+  padding: 15px 0;
+  .icon-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @media #{$sm} {
+      margin-bottom: 30px;
+    }
+    @media #{$xs} {
+      margin-bottom: 30px;
+    }
+
+    .icon__img {
+      i {
+        font-size: 40px;
+        color: var(--tp-common-white);
+      }
+    }
+    .icon__text {
+      h4 {
+        color: var(--tp-common-white);
+        // margin-bottom: 0;
+        font-weight: 500;
+      }
+      p {
+        color: var(--tp-common-white);
+        margin-bottom: 0;
+      }
+    }
+  }
+}

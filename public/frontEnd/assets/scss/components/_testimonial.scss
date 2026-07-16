@@ -1,0 +1,66 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  00.  TESTIMONIAL CSS START
+/*----------------------------------------*/
+.testimonial__area {
+  background: var(--tp-theme-4);
+  padding: 60px 0;
+  .testimonial__inner {
+    margin-right: -13vw;
+    @media #{$sm} {
+      margin-right: 0;
+    }
+    @media #{$xs} {
+      margin-right: 0;
+    }
+    .testimonial__slider {
+      .testimonial__item {
+        background: var(--tp-common-white);
+        padding: 25px 25px 15px 25px;
+        cursor: pointer;
+        transition: all 0.5s;
+        &:hover {
+          transform: translateY(-10px);
+        }
+        .item__top {
+          border-bottom: 1px solid var(--tp-border-1);
+          padding-bottom: 20px;
+          .item__text {
+            h5 {
+              font-size: 17px;
+              font-weight: 500;
+            }
+            ul {
+              display: flex;
+              list-style: none;
+              gap: 8px;
+            }
+            .muted-text {
+              font-size: 17px;
+              color: #807f7f;
+            }
+            .desc {
+              font-size: 17px;
+              font-weight: 400;
+            }
+          }
+        }
+        .item__bottom {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          padding-top: 15px;
+          img {
+            width: 60px;
+            height: 60px;
+          }
+          p {
+            flex: 1;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

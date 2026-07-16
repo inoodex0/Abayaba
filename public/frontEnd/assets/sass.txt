@@ -1,0 +1,1 @@
+ sass --watch e:\interior\assets\scss\main.scss:e:\interior\assets\css\style.css

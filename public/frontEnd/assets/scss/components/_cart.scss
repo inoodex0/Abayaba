@@ -1,0 +1,95 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  00. CART CSS START
+/*----------------------------------------*/
+.cart__table {
+  margin-bottom: 60px;
+  .table {
+    thead {
+      tr {
+        border-bottom: 1px solid var(--tp-border-1);
+        margin-bottom: 30px;
+      }
+    }
+    tbody {
+      tr {
+        padding: 30px 0;
+        border-bottom: 1px solid var(--tp-border-1);
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  .table__product {
+    display: flex;
+    gap: 20px;
+    img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      @media #{$xs} {
+        width: 50px;
+        height: 50px;
+      }
+      @media #{$sm} {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .product__content {
+      flex: 1;
+      h5 {
+        font-size: 19px;
+        font-weight: 500;
+        @media #{$xs} {
+          font-size: 13px;
+        }
+        @media #{$sm} {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+.cart__quantity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 5px;
+  border-radius: 7px;
+  max-width: 100px;
+  border: 1px solid var(--tp-border-1);
+  input[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    width: 40px;
+    text-align: center;
+    border: none;
+    -moz-appearance: textfield;
+  }
+}
+
+.grand__total {
+  .total__text {
+    h5 {
+      font-size: 600px;
+      font-size: 18px;
+    }
+    .amount {
+      font-size: 20px;
+    }
+  }
+}
+.total__btn {
+  button {
+    width: 100%;
+    padding: 15px 0;
+    background: var(--tp-theme-1);
+    color: var(--tp-common-white);
+    border-radius: 30px;
+  }
+}

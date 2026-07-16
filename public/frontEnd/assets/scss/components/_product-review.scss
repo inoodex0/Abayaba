@@ -1,0 +1,168 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  00. PRODUCT REVIEW CSS START
+/*----------------------------------------*/
+.product__review {
+  padding: 60px 0;
+  .review__card {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    .card__top {
+      border-bottom: 1px solid #efefef;
+      padding: 20px 0;
+      h3 {
+        font-weight: 500;
+        font-size: 25px;
+        margin-bottom: 30px;
+      }
+      .review__star {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border-right: 1px solid #efefef;
+        ul {
+          gap: 3px;
+          margin-right: 10px;
+          margin-bottom: 0;
+          li {
+            color: var(--tp-theme-3);
+            margin-bottom: 0;
+          }
+          span {
+            font-size: 17px;
+          }
+        }
+      }
+      .review__count {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .count__item {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          .count__star {
+            ul {
+              gap: 3px;
+              li {
+                color: var(--tp-theme-1);
+              }
+            }
+          }
+          .count__bar {
+            background: #efefef;
+            width: 170px;
+            position: relative;
+            height: 15px;
+            .bar__inner {
+              background: var(--tp-theme-1);
+              width: 50%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+          .count__number {
+            span {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .review__btn {
+        button {
+          background: var(--tp-theme-1);
+          color: var(--tp-common-white);
+          font-size: 17px;
+          font-weight: 500;
+          padding: 5px 65px;
+        }
+      }
+    }
+    .review__form {
+      input,
+      textarea {
+        padding: 5px 10px;
+        border-radius: 7px;
+        border: 1px solid #393939;
+        &:focus {
+          border: 1px solid #393939;
+          outline: none;
+        }
+      }
+      .upload {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #393939;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.form__btn {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+  .theme-btn {
+    padding: 5px 20px;
+    font-size: 19px;
+    font-weight: 500;
+    &.cancel {
+      border: 2px solid var(--tp-theme-1);
+      color: var(--tp-theme-1);
+    }
+    &.submit {
+      background: var(--tp-theme-1);
+      color: var(--tp-common-white);
+    }
+  }
+}
+
+.product__description {
+  .desc__box {
+    h4 {
+      border-bottom: 1px solid var(--tp-border-1);
+      padding: 10px 0;
+      color: #545252;
+    }
+    p {
+      padding: 10px 0;
+      font-size: 15px;
+      color: #545252;
+    }
+    .desc__item__wrap {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      @media #{$xs} {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media #{$sm} {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media #{$md} {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .desc__feature {
+        text-align: center;
+        img {
+          width: 80px;
+          height: 80px;
+          margin-left: auto;
+          margin-right: auto;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

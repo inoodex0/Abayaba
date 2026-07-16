@@ -1,0 +1,13 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  00.  Section Title CSS START
+/*----------------------------------------*/
+.section-title {
+  h2 {
+    color: rgb(84, 82, 82);
+    font-size: 32px;
+    font-weight: 700;
+  }
+  text-align: center;
+}

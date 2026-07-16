@@ -1,0 +1,190 @@
+ @use "../utils" as *;
+
+ /*----------------------------------------*/
+ /*  00. PRODUCTS SECTION CSS START
+/*----------------------------------------*/
+ .products__area {
+     .product__title {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin-bottom: 30px;
+         margin-top: 30px;
+
+         h3 {
+             color: rgb(84, 82, 82);
+         }
+
+         a {
+             font-size: 17px;
+             text-decoration: underline;
+
+             &:hover {
+                 color: var(--tp-theme-1);
+             }
+         }
+     }
+
+     .slick-slider {
+         margin: 0 -15px;
+     }
+
+     .slick-slide {
+         margin-right: 15px;
+         margin-left: 15px;
+     }
+ }
+
+ .product__item {
+     gap: 40px;
+
+     .product__img {
+         border-radius: 10px;
+         width: 100%;
+         overflow: hidden;
+         width: 100%;
+         overflow: hidden;
+         max-height: 340px;
+
+         img {
+             width: 100%;
+             height: 100%;
+             border-radius: 10px;
+             min-height: 340px;
+             max-height: 340px;
+             border: 1px solid #ddd;
+
+             @media #{$md} {
+                 min-height: 240px;
+             }
+
+             @media #{$sm} {
+                 min-height: 240px;
+             }
+         }
+     }
+
+     .product__content {
+         margin-top: 20px;
+
+         h4 {
+             margin-bottom: 0;
+
+             a {
+                 font-size: 16px;
+                 font-weight: 500;
+                 color: var(--tp-theme-1);
+                 margin-bottom: 0;
+             }
+         }
+
+         .start_rating {
+             margin-bottom: 0;
+
+             ul {
+                 display: flex;
+                 list-style: none;
+                 gap: 4px;
+
+                 li {
+                     color: var(--tp-theme-3);
+                     font-size: 14px;
+                 }
+
+                 margin-bottom: 0;
+             }
+         }
+
+         .price__wrap {
+             display: flex;
+             justify-content: space-between;
+
+             @media #{$xs} {
+                 flex-direction: column;
+             }
+             @media #{$sm} {
+                 flex-direction: column;
+             }
+             @media #{$md} {
+                 flex-direction: column;
+             }
+
+             @media #{$lg} {
+                 flex-direction: column;
+             }
+
+             @media #{$xl} {
+                 flex-direction: column;
+             }
+
+             .price {
+                 display: flex;
+                 gap: 15px;
+                 align-items: flex-start;
+
+                 .curr-price {
+                     font-size: 20px;
+                     color: var(--tp-theme-1);
+                     font-weight: 500;
+
+                     i {
+                         font-size: 19px;
+                         margin-right: 2px;
+                     }
+                 }
+
+                 .old-price {
+                     font-size: 15px;
+                     color: var(--tp-common-black);
+                     font-weight: 500;
+                     text-decoration: line-through;
+
+                     i {
+                         font-size: 13px;
+                         margin-right: 2px;
+                     }
+                 }
+             }
+         }
+     }
+ }
+
+ .collecction__area {
+     padding: 30px 0;
+
+     .collection__item {
+         margin-bottom: 30px;
+
+         img {
+             width: 100%;
+             height: 100%;
+         }
+     }
+ }
+
+ .product_btn {
+     padding: 9px 12px;
+     background-color: var(--tp-theme-1);
+     color: var(--tp-common-white);
+     font-size: 14px;
+     border-radius: 5px;
+     cursor: pointer;
+
+    &.dark {
+         padding: 0px 12px ;
+         background: var(--tp-common-black) ;
+         color: var(--tp-common-white)
+     }
+    &.dark2 {
+         padding: 9px 12px !important ;
+         background: var(--tp-common-black) ;
+         color: var(--tp-common-white)
+     }
+
+     &:hover {
+         color: var(--tp-common-white)
+     }
+ }
+
+
+ 

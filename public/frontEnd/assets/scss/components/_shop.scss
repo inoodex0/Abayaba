@@ -1,0 +1,64 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  00. Shop page CSS START
+/*----------------------------------------*/
+
+.shop__page {
+  padding:0 0 60px 0;
+}
+ 
+.shop-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  @media #{$xs} {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media #{$sm} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media #{$md} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.shop-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  @media #{$xs} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media #{$sm} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pagination{
+  .page-item{
+    &.active{
+      span{
+        background:var(--tp-theme-1) !important;
+        box-shadow: none;
+        outline: none;
+        border:none;
+        color:var(--tp-common-white);
+      }
+      &:focus{
+        span{
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+    .page-link{
+      color:var(--tp-common-black);
+      &:focus{
+        box-shadow:none;
+        border:none;
+        outline: none;
+      
+      }
+    }
+  }
+}

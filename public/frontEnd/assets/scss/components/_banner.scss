@@ -1,0 +1,19 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  00.  BANNER SECTION CSS START
+/*----------------------------------------*/
+.banner__area {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  .banner__item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

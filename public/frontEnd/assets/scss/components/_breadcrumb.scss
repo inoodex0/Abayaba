@@ -1,0 +1,73 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  24. BREADCRUMB CSS START
+/*----------------------------------------*/
+.breadcrumb {
+  padding: 100px;
+  background: var(--tp-common-white);
+  text-align: center;
+  h3 {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--tp-text-title);
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    li {
+      a {
+        position: relative;
+        &::after {
+          content: "\f105";
+          font-family: "Font Awesome 6 Pro";
+          left: 100%;
+          position: absolute;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.page-padding {
+  padding: 0 100px;
+  @media #{$xs} {
+    padding: 0 15px;
+  }
+  @media #{$sm} {
+    padding: 0 15px;
+  }
+  @media #{$md} {
+    padding: 0 15px;
+  }
+}
+
+.product__breadcrumb {
+  padding: 15px 0;
+  ul {
+    list-style: none;
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    flex-wrap:wrap;
+    li {
+      a {
+        position: relative;
+        font-size: 15px;
+        color: var(--tp-text-title);
+        font-weight: 500;
+        &::after {
+          content: "\f105";
+          position: absolute;
+          left: 110%;
+          top: -7px;
+          font-family: "Font Awesome 6 Pro";
+        }
+      }
+    }
+  }
+}

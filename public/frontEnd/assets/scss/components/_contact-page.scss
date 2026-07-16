@@ -1,0 +1,89 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  00. CONTACT PAGE CSS START
+/*----------------------------------------*/
+.contact__page {
+  padding: 60px 0;
+  .page__title {
+    margin-bottom: 40px;
+    padding-right: 30px;
+    h3 {
+      font-size: 25px;
+      font-weight: 500;
+    }
+    p {
+      font-size: 17px;
+      font-weight: 500;
+    }
+  }
+  .contact__form {
+    padding-right: 30px;
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      border: 1px solid var(--tp-common-black);
+      padding: 8px 10px;
+      width: 100%;
+      border-radius: 5px;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.5);
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    textarea {
+      width: 100%;
+      border: 1px solid var(--tp-common-black);
+      padding: 8px 10px;
+      border-radius: 5px;
+      min-height: 200px;
+      margin-bottom: 15px;
+    }
+    .form-btn {
+      margin-top: 20px;
+      padding: 5px 20px;
+      font-size: 17px;
+      border: 1px solid transparent;
+      font-weight: 500;
+      background: var(--tp-theme-2);
+      color: var(--tp-common-white);
+      transition: all 0.5s;
+      border-radius: 5px;
+      &:hover {
+        color: var(--tp-theme-2);
+        border-color: var(--tp-theme-2);
+        background: var(--tp-common-white);
+      }
+    }
+  }
+}
+
+.contact__page__info {
+  .info__title {
+    h3 {
+      font-size: 22px;
+      font-weight: 400;
+    }
+    p {
+      font-size: 18px;
+    }
+    margin-bottom: 20px;
+  }
+  .adress__item {
+    margin-bottom: 30px;
+    h4 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    ul {
+      list-style: none;
+      li {
+        margin-bottom: 0;
+        line-height: 30px;
+      }
+    }
+  }
+}
