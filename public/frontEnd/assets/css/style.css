@@ -1567,13 +1567,11 @@ input[type="color"] {
 
 .product__details_area .product__image__slider .thumb-slider .slick-slide.slick-current img {
     text-align: center;
-    border-radius: 7px;
-    border: 1px solid var(--tp-border-1);
-    padding: 10px;
+    border-radius: 4px;
+    border: 2px solid var(--tp-border-0);
     width: 100%;
     height: 100px;
     object-fit: cover;
-    border-radius: 4px;
     cursor: pointer;
 }
 

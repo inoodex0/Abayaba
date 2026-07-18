@@ -433,16 +433,24 @@
         slidesToScroll: 1,
         asNavFor: ".main-slider",
         dots: false,
-        centerMode: true,
+        centerMode: false,
         focusOnSelect: true,
         arrows: false,
         responsive: [
             {
+                breakpoint: 991,
+                settings: {
+                    centerMode: true,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                },
+            },
+            {
                 breakpoint: 540,
                 settings: {
-                    slidesToShow: 2,
+                    centerMode: true,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
-                    centerMode: false,
                 },
             },
         ],
