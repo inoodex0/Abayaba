@@ -875,12 +875,12 @@ input[type="color"] {
 
 .hero__area a {
     display: block;
-    width: 100%;
+    width: 90%;
 }
 
 .hero__area a img {
     width: 100%;
-    height: auto;
+    height: 800px;
     display: block;
 }
 
