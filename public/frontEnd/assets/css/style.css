@@ -1016,7 +1016,7 @@ input[type="color"] {
 }
 
 .product__item {
-    gap: 40px;
+    gap: 0;
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
@@ -1035,13 +1035,13 @@ input[type="color"] {
     width: 100%;
     overflow: hidden;
     overflow: hidden;
-    height: 280px;
+    height: 300px;
     flex-shrink: 0;
 }
 
 .product__item .product__img img {
     width: 100%;
-    height: 280px;
+    height: 300px;
     object-fit: cover;
     border-radius: 12px;
     transition: transform 0.5s ease;
@@ -1054,7 +1054,7 @@ input[type="color"] {
 
 .product__item .product__content {
     margin-top: 0;
-    padding: 15px 15px 20px;
+    padding: 8px 15px 18px;
     flex: 1;
 }
 
