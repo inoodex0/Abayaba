@@ -38,8 +38,8 @@
     .product__item .product__content .price__wrap .price .old-price { font-size: 12px; }
     .product__item .product__content .price__wrap { flex-direction: row; align-items: center; }
     .product_btn { font-size: 11px; padding: 6px 8px; border-radius: 4px; font-weight: 500; }
-    .shop-4 { grid-template-columns: repeat(1, 1fr); gap: 12px; }
-    .shop-3 { grid-template-columns: repeat(1, 1fr); gap: 12px; }
+    .shop-4 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .shop-3 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .pro_btn.d-flex { flex-wrap: nowrap; gap: 6px !important; }
     .pro_btn .cart_btn { flex: 1; min-width: 0; }
     .pro_btn .cart_btn .product_btn,
