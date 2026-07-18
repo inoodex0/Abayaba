@@ -232,7 +232,7 @@
             {
                 breakpoint: 540,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                 },
             },
@@ -267,7 +267,7 @@
             {
                 breakpoint: 540,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                 },
             },
@@ -436,6 +436,16 @@
         centerMode: true,
         focusOnSelect: true,
         arrows: false,
+        responsive: [
+            {
+                breakpoint: 540,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    centerMode: false,
+                },
+            },
+        ],
     });
 
     //   // back to top js

@@ -5,7 +5,8 @@
     $shipping = Session::get('shipping')?Session::get('shipping'):0;
     $discount = Session::get('discount')?Session::get('discount'):0;
 @endphp
-<table class="cart_table table table-bordered table-striped text-center mb-0">
+@if (Cart::instance('shopping')->count() > 0)
+<table class="cart_table table text-center mb-0">
         <thead>
          <tr>
           <th style="width: 20%;">Delete</th>
@@ -64,6 +65,9 @@
          </tr>
         </tfoot>
        </table>
+@else
+<p class="text-muted text-center mb-0">Your cart is empty</p>
+@endif
 
 <script src="{{asset('public/frontEnd/js/jquery-3.6.3.min.js')}}"></script>
 <!-- cart js start -->

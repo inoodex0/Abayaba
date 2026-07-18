@@ -58,6 +58,7 @@
             @endforeach
           </div>
           <!-- Thumbnail Slider -->
+          @if ($details->images->count() > 1)
           <div class="thumb-slider">
             @foreach ($details->images as $key => $image)
             <div>
@@ -65,6 +66,7 @@
             </div>
             @endforeach
           </div>
+          @endif
         </div>
         <!-- product video section  -->
         @if ($details->pro_vide)

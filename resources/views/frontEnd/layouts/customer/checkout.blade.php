@@ -110,7 +110,8 @@ $shipping = Session::get('shipping') ? Session::get('shipping') : 0;
             <h5 class="mb-2">Order Summary</h5>
           </div>
           <div class="card-body cartlist">
-            <table class="cart_table table table-bordered table-striped text-center mb-0">
+            @if (Cart::instance('shopping')->count() > 0)
+            <table class="cart_table table text-center mb-0">
               <thead>
                 <tr>
                   <th style="width: 20%;">Delete</th>
@@ -177,6 +178,9 @@ $shipping = Session::get('shipping') ? Session::get('shipping') : 0;
                 </tr>
               </tfoot>
             </table>
+            @else
+            <p class="text-muted text-center mb-0">Your cart is empty</p>
+            @endif
           </div>
 
         </div>
