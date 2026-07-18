@@ -48,7 +48,7 @@
 <section class="product__details_area">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-8">
         <div class="product__image__slider">
           <div class="main-slider">
             @foreach ($details->images as $value)
@@ -73,7 +73,7 @@
         </div>
         @endif
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-4">
         <div class="product__info">
           <h3>{{ $details->name }}</h3>
           <div class="star-rating">

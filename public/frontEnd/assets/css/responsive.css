@@ -23,7 +23,7 @@
     /* Hero */
     .hero__area { min-height: 250px; }
     .hero__area a { height: 250px; }
-    .hero__area a img { height: 100%; object:cover; }
+    .hero__area a img { height: 100%; object-fit: cover; }
 
     /* Category */
     .category__area .category__wrapper { gap: 10px; }
@@ -58,7 +58,7 @@
     .breadcrumb ul li { font-size: 14px; }
 
     /* Product Details */
-    .product__details_area .product__image__slider .main-slider img { max-height: 300px; }
+    .product__details_area .product__image__slider .main-slider img { max-height: 350px; }
     .product__details_area .product__info { padding: 20px 0; }
     .product__details_area .product__info h2 { font-size: 20px; }
     .product__details_area .product__info h3 { font-size: 22px; }
@@ -189,7 +189,7 @@
     .breadcrumb { padding: 40px 20px; }
     .breadcrumb h3 { font-size: 28px; }
     .product__details_area .product__info h3 { font-size: 22px; }
-    .product__details_area .product__image__slider .main-slider img { max-height: 400px; }
+    .product__details_area .product__image__slider .main-slider img { max-height: 500px; }
     .product__item .product__img { height: 200px; border-radius: 10px 10px 0 0; }
     .product__item .product__img img { width: 100%; height: 200px; object-fit: cover; }
     .product__item .product__content { padding: 4px 12px 12px; }
@@ -214,7 +214,7 @@
     .category__area .category__wrapper .category__item .category__img { max-width: 120px; max-height: 120px; }
     .shop-4 { grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .breadcrumb { padding: 50px 30px; }
-    .product__details_area .product__image__slider .main-slider img { max-height: 450px; }
+    .product__details_area .product__image__slider .main-slider img { max-height: 550px; }
     .product__item .product__img { height: 220px; border-radius: 10px 10px 0 0; }
     .product__item .product__img img { width: 100%; height: 220px; object-fit: cover; }
     .product__item .product__content { padding: 5px 14px 15px; }
