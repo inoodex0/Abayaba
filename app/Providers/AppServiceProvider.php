@@ -13,8 +13,6 @@ use App\Models\OrderStatus;
 use App\Models\EcomPixel;
 use App\Models\GoogleTagManager;
 use App\Models\Order;
-use App\Models\PaymentGateway;
-use Config;
 use Session;
 
 class AppServiceProvider extends ServiceProvider
@@ -36,16 +34,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-    //    $shurjopay = PaymentGateway::where(['status' => 1, 'type' => 'shurjopay'])->first();
-    //     if ($shurjopay) {
-            
-    //         Config::set(['shurjopay.apiCredentials.username' => $shurjopay->username]);
-    //         Config::set(['shurjopay.apiCredentials.password' => $shurjopay->password]);
-    //         Config::set(['shurjopay.apiCredentials.prefix' => $shurjopay->prefix]);
-    //         Config::set(['shurjopay.apiCredentials.return_url' => $shurjopay->success_url]);
-    //         Config::set(['shurjopay.apiCredentials.cancel_url' => $shurjopay->return_url]);
-    //         Config::set(['shurjopay.apiCredentials.base_url' => $shurjopay->base_url]);
-    //     }
         $generalsetting = GeneralSetting::where('status',1)->limit(1)->first();
         view()->share('generalsetting',$generalsetting); 
 

@@ -2189,8 +2189,7 @@ CREATE TABLE `payment_gateways` (
 --
 
 INSERT INTO `payment_gateways` (`id`, `type`, `app_key`, `app_secret`, `username`, `password`, `base_url`, `success_url`, `return_url`, `prefix`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'bkash', 'w5CHBl2PasU0pWKAAoyz1ADGtc', 'hh9v0N1cmJcITiMNiFgLkp4NmYnKfLMTcsnyOfFf2d5eMLe56cMH', '01319911688', '^FI],6n?b08', 'https://tokenized.pay.bka.sh/v1.2.0-beta', NULL, NULL, NULL, 0, '2024-02-06 11:29:46', '2025-02-13 17:06:26'),
-(2, 'shurjopay', '', '', 'sp_sandbox', 'pyyk97hu&6u6', 'https://sandbox.shurjopayment.com', 'https://suvroit.online/', 'https://suvroit.online', 'NOK', 0, '2024-02-06 11:29:46', '2024-09-14 03:38:59');
+(1, 'bkash', 'w5CHBl2PasU0pWKAAoyz1ADGtc', 'hh9v0N1cmJcITiMNiFgLkp4NmYnKfLMTcsnyOfFf2d5eMLe56cMH', '01319911688', '^FI],6n?b08', 'https://tokenized.pay.bka.sh/v1.2.0-beta', NULL, NULL, NULL, 0, '2024-02-06 11:29:46', '2025-02-13 17:06:26');
 
 -- --------------------------------------------------------
 
@@ -3900,7 +3899,7 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `payment_gateways`
 --
 ALTER TABLE `payment_gateways`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `permissions`

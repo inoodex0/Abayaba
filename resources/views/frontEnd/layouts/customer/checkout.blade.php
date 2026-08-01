@@ -90,11 +90,6 @@ $shipping = Session::get('shipping') ? Session::get('shipping') : 0;
                                                 <input class="form-check-input" type="radio" name="payment_method"
                                                     id="inlineRadio2" value="bkash" required/>
                                                 <label class="form-check-label" for="inlineRadio2">Bkash</label>
-                                            </div>
-                                            <div class="form-check p_shurjo">
-                                                <input class="form-check-input" type="radio" name="payment_method"
-                                                    id="inlineRadio3" value="shurjopay" required/>
-                                                <label class="form-check-label" for="inlineRadio3">Shurjopay</label>
                                             </div> --}}
 
               </div>

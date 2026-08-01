@@ -29,7 +29,6 @@ use App\Http\Controllers\Frontend\ShoppingController;
 use App\Http\Controllers\Admin\MediaLibraryController;
 use App\Http\Controllers\Admin\ChildcategoryController;
 use App\Http\Controllers\Admin\SlidingNoticeController;
-use App\Http\Controllers\Frontend\ShurjopayControllers;
 use App\Http\Controllers\Admin\ApiIntegrationController;
 use App\Http\Controllers\Admin\BannerCategoryController;
 use App\Http\Controllers\Admin\BlogCategoryController;
@@ -77,8 +76,7 @@ Route::group(['namespace'=>'Frontend', 'middleware' => ['ipcheck','check_refer']
     Route::get('districts', [FrontendController::class, 'districts'])->name('districts');
     Route::get('/campaign/{slug}', [FrontendController::class, 'campaign'])->name('campaign');
     Route::get('/offer', [FrontendController::class, 'offers'])->name('offers');
-     Route::get('/payment-success', [FrontEndController::class, 'payment_success'])->name('payment_success');
-    Route::get('/payment-cancel', [FrontEndController::class, 'payment_cancel'])->name('payment_cancel');
+
     /** blog */
     Route::get('blogs', [FrontendController::class, 'blogs'])->name('all.blogs');
     Route::get('blog-details/{slug}', [FrontendController::class, 'blogDetails'])->name('blog_details');
@@ -147,8 +145,7 @@ Route::group(['namespace'=>'Frontend', 'middleware' => ['ipcheck','check_refer']
     Route::get('bkash/checkout-url/pay',[BkashController::class,'pay'])->name('url-pay');
 Route::any('bkash/checkout-url/create',[BkashController::class,'create'])->name('url-create');
 Route::get('bkash/checkout-url/callback',[BkashController::class,'callback'])->name('url-callback');
-    Route::get('/payment-success', [ShurjopayControllers::class, 'payment_success'])->name('payment_success');
-    Route::get('/payment-cancel', [ShurjopayControllers::class, 'payment_cancel'])->name('payment_cancel');
+
 
 });
 
