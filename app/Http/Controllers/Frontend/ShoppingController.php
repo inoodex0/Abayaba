@@ -24,6 +24,10 @@ class ShoppingController extends Controller
         if (!$productInfo) {
             return response()->json(['error' => 'Product not found'], 404);
         }
+
+        if ($productInfo->stock <= 0) {
+            return response()->json(['error' => 'This product is out of stock'], 422);
+        }
     
         $cartinfo = Cart::instance('shopping')->add([
             'id' => $productInfo->id,
@@ -73,6 +77,12 @@ class ShoppingController extends Controller
     {
         // $product = Product::with('activeCampaign')->where('is_deleted',0)->where(['id' => $request->id])->first();
         $product = Product::with('activeCampaign')->where('is_deleted',0)->findOrFail($request->id);
+
+        if ($product->stock <= 0) {
+            Toastr::error('This product is out of stock', 'Failed!');
+            return redirect()->back();
+        }
+
         Cart::instance('shopping')->add([
             'id' => $product->id,
             'name' => $product->name,

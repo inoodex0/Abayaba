@@ -30,7 +30,7 @@
   <div class="container">
     <ul>
       <li><a href="{{ url('/') }}">Home</a></li>
-      <li><a href="{{ url('category/' . $details->category->slug) }}">{{ $details->category->name }}</a>
+      <li><a href="{{ url('category/' . ($details->category ? $details->category->slug : '')) }}">{{ $details->category?$details->category->name:'' }}</a>
       </li>
       @if ($details->subcategory)
       <li><a href="">{{ $details->subcategory ? $details->subcategory->subcategoryName : '' }}</a>
@@ -242,6 +242,7 @@
                 {{-- <span class="plus">+</span> --}}
               </div>
             </div>
+            @if($details->stock > 0)
             <div class="order__btn">
               <input type="submit" class="theme-btn cart" id="" onclick="return sendSuccess();" name="add_cart"
                 value="Add To Cart" />
@@ -249,6 +250,11 @@
               <input type="submit" class="theme-btn buy" onclick="return sendSuccess();" name="order_now"
                 value="Order Now" />
             </div>
+            @else
+            <div class="order__btn">
+              <span class="theme-btn cart disabled_btn">Out of Stock</span>
+            </div>
+            @endif
           </div>
           <div class="mt-md-2 mt-2">
             <h4 class="font-weight-bold">
@@ -645,7 +651,13 @@ $ratingsCount = [
               @endif
               <span class="curr-price">৳ {{ $value->new_price }}</span>
             </div>
-            @if (!$value->prosizes->isEmpty() || !$value->procolors->isEmpty())
+            @if($value->stock <= 0)
+            <div class="pro_btn sub_btn">
+              <div class="cart_btn">
+                <span class="cart_store product_btn disabled_btn">Out of Stock</span>
+              </div>
+            </div>
+            @elseif (!$value->prosizes->isEmpty() || !$value->procolors->isEmpty())
             <div class="pro_btn sub_btn">
               <div class="cart_btn">
                 <a class="cart_store product_btn" data-id="{{ $value->id }}">Add to

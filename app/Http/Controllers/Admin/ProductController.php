@@ -51,9 +51,9 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         if($request->keyword){
-            $data = Product::orderBy('id','DESC')->where('name', 'LIKE', '%' . $request->keyword . "%")->where('is_deleted',0)->where('status',1)->where('stock','>',0)->with('image','category')->paginate(50);
+            $data = Product::orderBy('id','DESC')->where('name', 'LIKE', '%' . $request->keyword . "%")->where('is_deleted',0)->where('status',1)->with('image','category')->paginate(50);
         }else{
-            $data = Product::orderBy('id','DESC')->with('image','category')->where('is_deleted',0)->where('status',1)->where('stock','>',0)->paginate(50);
+            $data = Product::orderBy('id','DESC')->with('image','category')->where('is_deleted',0)->where('status',1)->paginate(50);
         }
         return view('backEnd.product.index',compact('data'));
     }

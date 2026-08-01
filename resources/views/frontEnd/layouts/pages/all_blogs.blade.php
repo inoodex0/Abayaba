@@ -36,7 +36,7 @@
         
           <div class="post__meta">
             <span>{{ $blog->created_at->format('d M, Y') }}</span>
-            <span class="post_btn">{{ $blog->category->name }}</span>
+            <span class="post_btn">{{ $blog->category?$blog->category->name:'' }}</span>
           </div>
       
       

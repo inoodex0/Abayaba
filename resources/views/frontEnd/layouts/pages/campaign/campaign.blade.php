@@ -90,8 +90,12 @@
             <div class="campaign_item">
               <div class="banner_t">
                 <h2>{{$campaign_data->banner_title}}</h2>
+                @if($product && $product->stock > 0)
                 <a href="#order_form" class="cam_order_now" id="cam_order_now"><i class="fa-solid fa-cart-shopping"></i>
                   অর্ডার করুন </a>
+                @else
+                <span class="cam_order_now disabled_btn">Out of Stock</span>
+                @endif
                 <p class="megaoffer_btn">{{$campaign_data->price}}</p>
               </div>
             </div>
@@ -207,8 +211,12 @@
             </div>
             <div class="col-sm-12">
               <div class="ord_btn">
+                @if($product && $product->stock > 0)
                 <a href="#order_form" class="cam_order_now" id="cam_order_now"> অর্ডার করতে ক্লিক করুন <i
                     class="fa-solid fa-hand-point-right"></i> </a>
+                @else
+                <span class="cam_order_now disabled_btn">Out of Stock</span>
+                @endif
               </div>
             </div>
           </div>
@@ -277,8 +285,12 @@
             </div>
             <div class="col-sm-12">
               <div class="ord_btn">
+                @if($product && $product->stock > 0)
                 <a href="#order_form" class="cam_order_now" id="cam_order_now"> অর্ডার করতে ক্লিক করুন <i
                     class="fa-solid fa-hand-point-right"></i> </a>
+                @else
+                <span class="cam_order_now disabled_btn">Out of Stock</span>
+                @endif
               </div>
             </div>
           </div>
@@ -370,7 +382,11 @@
                             <!-- col-end -->
                             <div class="col-sm-12">
                               <div class="form-group">
+                                @if($product && $product->stock > 0)
                                 <button class="order_place" type="submit">অর্ডার কন্ফার্ম করুন </button>
+                                @else
+                                <button class="order_place disabled_btn" type="button">Out of Stock</button>
+                                @endif
                               </div>
                             </div>
                           </div>

@@ -49,7 +49,7 @@
                                 <input type="checkbox" class="change-status" data-id="{{$blog->id}}" name="status" {{ $blog->status == 1 ? 'checked' : '' }}>
                                 <span class="slider round check"></span>
                             </label></td>
-                            <td>{{$blog->category->name}}</td>
+                            <td>{{$blog->category?$blog->category->name:''}}</td>
                             <td>{{ $blog->created_at->format('d M, Y') }}</td>
                             
                             <td><a href="{{route('blog.edit', $blog->id)}}" class="btn btn-xs btn-primary waves-effect waves-light"><i class="fe-edit-1"></i></a>

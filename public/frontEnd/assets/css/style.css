@@ -1148,6 +1148,18 @@ input[type="color"] {
     background: #0a2530;
 }
 
+/* Out of stock - disabled button state */
+.product_btn.disabled_btn,
+.add-to-cart.disabled_btn,
+.addcartbutton.disabled_btn,
+.theme-btn.disabled_btn {
+    background: #b8b8b8 !important;
+    color: #ffffff !important;
+    cursor: not-allowed;
+    opacity: 0.75;
+    pointer-events: none;
+}
+
 /* Fix button gap in product grid */
 .pro_btn.d-flex.g-4 { gap: 8px; }
 

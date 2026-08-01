@@ -18,6 +18,7 @@ use App\Models\PaymentGateway;
 use App\Models\SmsGateway;
 use App\Models\GeneralSetting;
 use App\Models\Contact;
+use App\Models\Product;
 use App\Mail\OrderPlacedMail;
 use Session;
 use Hash;
@@ -272,6 +273,15 @@ class CustomerController extends Controller
         if(Cart::instance('shopping')->count() <= 0) {
             Toastr::error('Your shopping empty', 'Failed!');
             return redirect()->back();
+        }
+
+        // Block order if any cart item is out of stock
+        foreach (Cart::instance('shopping')->content() as $cartItem) {
+            $cartProduct = Product::where('is_deleted', 0)->find($cartItem->id);
+            if (!$cartProduct || $cartProduct->stock <= 0) {
+                Toastr::error($cartItem->name.' is out of stock. Please remove it from your cart.', 'Failed!');
+                return redirect()->back();
+            }
         }
 
         $subtotal = Cart::instance('shopping')->subtotal();

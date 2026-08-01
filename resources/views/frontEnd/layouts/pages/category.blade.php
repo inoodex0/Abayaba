@@ -68,7 +68,13 @@
             </div>
           </div>
           <div>
-            @if (!$value->prosizes->isEmpty() || !$value->procolors->isEmpty())
+            @if($value->stock <= 0)
+            <div class="pro_btn d-flex g-4">
+              <div class="cart_btn">
+                <span class="addcartbutton product_btn disabled_btn">Out of Stock</span>
+              </div>
+            </div>
+            @elseif (!$value->prosizes->isEmpty() || !$value->procolors->isEmpty())
             <div class="pro_btn d-flex g-4">
               <div class="cart_btn ">
                 <a href="{{ route('product', $value->slug) }}" class="addcartbutton product_btn">Add to Cart</a>

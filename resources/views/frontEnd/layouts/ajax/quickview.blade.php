@@ -11,6 +11,7 @@
             <div class="details_short">
                 {!! $data->short_description !!}
             </div>
+            @if($data->stock > 0)
             <form action="{{route('cart.store')}}" method="POST">
                 @csrf
                 <input type="hidden" name="id" value="{{$data->id}}">                
@@ -24,13 +25,18 @@
                     <button type="submit" class="add-to-cart cart_store" data-id="{{$data->id}}">add to cart</button>
                 </div>
             </form>
+            @else
+            <div class="qty-cart">
+                <span class="add-to-cart cart_store disabled_btn">Out of Stock</span>
+            </div>
+            @endif
             <a href="{{route('product',['id'=>$data->id])}}" style="display: none;" class="details-wishlist">Go To Details</a>
             <div class="col-12 mt-3 delivery_details">
                 <table class="table">
                     <tbody>                                    
                         <tr>
                             <td class="potro_font">
-                               Category: {{ $data->category->name }}
+                               Category: {{ $data->category?$data->category->name:'' }}
                             </td>                                        
                         </tr>
                         <tr>

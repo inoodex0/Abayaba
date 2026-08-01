@@ -155,6 +155,20 @@ button.order_place {
     font-weight: 600;
     border-radius: 5px;
 }
+/* Out of stock - disabled button state */
+.cam_order_now.disabled_btn,
+button.order_place.disabled_btn {
+    background: #b8b8b8 !important;
+    color: #fff !important;
+    cursor: not-allowed;
+    opacity: 0.75;
+    pointer-events: none;
+}
+.cam_order_now.disabled_btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
 .checkout-shipping label {
     font-weight: 600;
     margin-bottom: 10px;

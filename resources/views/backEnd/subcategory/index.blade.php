@@ -44,7 +44,7 @@
                                 <span>{{$loop->iteration}}</span>                               
                             </td>                            
                             <td>
-                                <span>{{$value->category->name}}</span>
+                                <span>{{$value->category?$value->category->name:''}}</span>
                             </td>
 
                             <td>

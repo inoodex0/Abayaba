@@ -79,7 +79,13 @@
             <span class="curr-price">৳ {{ $value->new_price }}</span>
           </div>
         </div>
-        @if(! $value->prosizes->isEmpty() || ! $value->procolors->isEmpty())
+        @if($value->stock <= 0)
+        <div class="pro_btn">
+          <div class="cart_btn">
+            <span class="addcartbutton disabled_btn">Out of Stock</span>
+          </div>
+        </div>
+        @elseif(! $value->prosizes->isEmpty() || ! $value->procolors->isEmpty())
         <div class="pro_btn">
           <div class="cart_btn">
             <a href="{{ route('product',$value->slug) }}" class="addcartbutton">Cart</a>

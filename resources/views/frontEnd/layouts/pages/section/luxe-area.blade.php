@@ -40,7 +40,13 @@
             </div>
           </div>
           <div>
-            @if (!$value->prosizes->isEmpty() || !$value->procolors->isEmpty())
+            @if($value->stock <= 0)
+            <div class="pro_btn sub_btn">
+              <div class="cart_btn">
+                <span class="cart_store product_btn disabled_btn">Out of Stock</span>
+              </div>
+            </div>
+            @elseif (!$value->prosizes->isEmpty() || !$value->procolors->isEmpty())
             <div class="pro_btn sub_btn">
               <div class="cart_btn">
                 <a class="cart_store product_btn" data-id="{{ $value->id }}">Add to
