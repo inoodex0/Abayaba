@@ -113,9 +113,9 @@ class ProductController extends Controller
             foreach ($images as $key => $image) {
                 $name =  time().'-'.$image->getClientOriginalName();
                 $name = strtolower(preg_replace('/\s+/', '-', $name));
-            	$uploadPath = 'public/uploads/product/';
+            	$uploadPath = public_path('uploads/product/');
             	$image->move($uploadPath,$name);
-            	$imageUrl =$uploadPath.$name;
+            	$imageUrl = 'public/uploads/product/'.$name;
 
                 $pimage             = new Productimage();
                 $pimage->product_id = $save_data->id;
@@ -227,9 +227,9 @@ class ProductController extends Controller
             foreach ($images as $key => $image) {
                 $name =  time().'-'.$image->getClientOriginalName();
                 $name = strtolower(preg_replace('/\s+/', '-', $name));
-            	$uploadPath = 'public/uploads/product/';
+            	$uploadPath = public_path('uploads/product/');
             	$image->move($uploadPath,$name);
-            	$imageUrl =$uploadPath.$name;
+            	$imageUrl = 'public/uploads/product/'.$name;
 
                 $pimage             = new Productimage();
                 $pimage->product_id = $update_data->id;

@@ -50,7 +50,7 @@ class NewCampaignController extends Controller
             $filename = time() . '-' . strtolower(preg_replace('/\s+/', '-', $image->getClientOriginalName()));
 
             // Move the file to the public/uploads/new_campaign directory
-            $image->move('public/uploads/new_campaign', $filename);
+            $image->move(public_path('uploads/new_campaign'), $filename);
 
             // Store the relative path to save in the database
             $imageUrl = 'public/uploads/new_campaign/' . $filename;
@@ -130,15 +130,15 @@ class NewCampaignController extends Controller
             $filename = time() . '-' . strtolower(preg_replace('/\s+/', '-', $image->getClientOriginalName()));
 
             // Move the file to the public/uploads/new_campaign directory
-            $image->move('public/uploads/new_campaign', $filename);
+            $image->move(public_path('uploads/new_campaign'), $filename);
 
             // Store the relative path to save in the database
             $imageUrl = 'public/uploads/new_campaign/' . $filename;
             $input['banner'] = $imageUrl;
 
             // Delete old image only if a new one is uploaded
-            if ($campaign->banner && file_exists($campaign->banner)) {
-                unlink($campaign->banner);
+            if ($campaign->banner && file_exists(public_path(str_replace('public/', '', $campaign->banner)))) {
+                @unlink(public_path(str_replace('public/', '', $campaign->banner)));
             }
         }
 

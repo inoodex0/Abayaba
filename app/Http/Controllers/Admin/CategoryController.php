@@ -46,7 +46,7 @@ class CategoryController extends Controller
             $filename = time() . '-' . strtolower(preg_replace('/\s+/', '-', $image->getClientOriginalName()));
     
             // Move the file to the public/uploads/category directory
-            $image->move('public/uploads/category', $filename);
+            $image->move(public_path('uploads/category'), $filename);
     
             // Store the relative path to save in the database
             $imageUrl = 'public/uploads/category/' . $filename;
@@ -91,15 +91,15 @@ class CategoryController extends Controller
             $filename = time() . '-' . strtolower(preg_replace('/\s+/', '-', $image->getClientOriginalName()));
     
             // Move the file to public/uploads/category directory
-            $image->move('public/uploads/category', $filename);  // Directly use 'public/uploads/category'
+            $image->move(public_path('uploads/category'), $filename);
     
-            // Optionally delete the old image if it exists (uncomment if needed)
-            if (!empty($update_data->image) && file_exists($update_data->image)) {
-                unlink( $update_data->image);  // Remove old image
+            // Optionally delete the old image if it exists
+            if (!empty($update_data->image) && file_exists(public_path(str_replace('public/', '', $update_data->image)))) {
+                @unlink(public_path(str_replace('public/', '', $update_data->image)));
             }
     
             // Store the relative path to save in the database
-            $input['image'] = 'public/uploads/category/' . $filename;  // Path to store in the DB
+            $input['image'] = 'public/uploads/category/' . $filename;
         } else {
             // Keep the existing image if no new image is uploaded
             $input['image'] = $update_data->image;

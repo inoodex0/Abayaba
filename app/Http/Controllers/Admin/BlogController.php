@@ -60,8 +60,8 @@ class BlogController extends Controller
             // Generate a safe file name
             $filename = time() . '-' . strtolower(preg_replace('/\s+/', '-', $image->getClientOriginalName()));
 
-            // Move the file to the public/uploads/new_campaign directory
-            $image->move('public/uploads/blogs', $filename);
+            // Move the file to the public/uploads/blogs directory
+            $image->move(public_path('uploads/blogs'), $filename);
 
             // Store the relative path to save in the database
             $imageUrl = 'public/uploads/blogs/' . $filename;
@@ -127,15 +127,15 @@ class BlogController extends Controller
             // Generate a safe file name
             $filename = time() . '-' . strtolower(preg_replace('/\s+/', '-', $image->getClientOriginalName()));
 
-            // Move the file to the public/uploads/new_campaign directory
-            $image->move('public/uploads/blogs', $filename);
+            // Move the file to the public/uploads/blogs directory
+            $image->move(public_path('uploads/blogs'), $filename);
 
             // Store the relative path to save in the database
             $imageUrl = 'public/uploads/blogs/' . $filename;
 
             // Delete old image only if a new one is uploaded
-            if ($blog->image && file_exists($blog->image)) {
-                unlink($blog->image);
+            if ($blog->image && file_exists(public_path(str_replace('public/', '', $blog->image)))) {
+                @unlink(public_path(str_replace('public/', '', $blog->image)));
             }
             $blog->image = $imageUrl;
         } else {

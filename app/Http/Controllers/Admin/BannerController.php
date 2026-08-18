@@ -41,9 +41,9 @@ class BannerController extends Controller
         // image with intervention 
         $file = $request->file('image');
         $name = time().$file->getClientOriginalName();
-        $uploadPath = 'public/uploads/banner/';
+        $uploadPath = public_path('uploads/banner/');
         $file->move($uploadPath,$name);
-        $fileUrl =$uploadPath.$name;
+        $fileUrl = 'public/uploads/banner/'.$name;
 
         $input = $request->all();
         $input['status'] = $request->status?1:0;
@@ -72,11 +72,13 @@ class BannerController extends Controller
            // image with intervention 
             $file = $request->file('image');
             $name = time().$file->getClientOriginalName();
-            $uploadPath = 'public/uploads/banner/';
+            $uploadPath = public_path('uploads/banner/');
             $file->move($uploadPath,$name);
-            $fileUrl =$uploadPath.$name;
+            $fileUrl = 'public/uploads/banner/'.$name;
             $input['image'] = $fileUrl;
-            File::delete($update_data->image);
+            if (!empty($update_data->image) && file_exists(public_path(str_replace('public/', '', $update_data->image)))) {
+                @unlink(public_path(str_replace('public/', '', $update_data->image)));
+            }
         }else{
             $input['image'] = $update_data->image;
         }
@@ -107,7 +109,12 @@ class BannerController extends Controller
     public function destroy(Request $request)
     {
         $delete_data = Banner::find($request->hidden_id);
-        $delete_data->delete();
+        if ($delete_data) {
+            if (!empty($delete_data->image) && file_exists(public_path(str_replace('public/', '', $delete_data->image)))) {
+                @unlink(public_path(str_replace('public/', '', $delete_data->image)));
+            }
+            $delete_data->delete();
+        }
         Toastr::success('Success','Data delete successfully');
         return redirect()->back();
     }
