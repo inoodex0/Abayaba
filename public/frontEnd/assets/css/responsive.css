@@ -4,7 +4,7 @@
 
 /*----------  X-Small Devices (Phones, <576px)  ----------*/
 @media (max-width: 575px) {
-    body { font-size: 14px; line-height: 26px; }
+    body { font-size: 14px; line-height: 26px; overflow-x: hidden; }
     .container { padding-left: 12px; padding-right: 12px; }
 
     /* Header */
@@ -21,21 +21,13 @@
     .header__area .header__bottom { padding: 14px 0; }
 
     /* Hero */
-   .hero__area {
-    width: 100%;
-    overflow: hidden;
-}
-
-.hero__area a {
-    display: block;
-    width: 100%;
-}
-
-.hero__area a img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+    .hero__area { overflow: hidden; }
+    .hero__area a { display: block; width: 100%; }
+    .hero__area a img { width: 100%; height: auto; object-fit: unset; display: block; max-width: 100%; }
+    .hero__area .hero-slider { overflow: hidden; }
+    .hero__area .slick-track { width: 100% !important; transform: none !important; }
+    .hero__area .slick-slide { width: 100% !important; margin: 0 !important; }
+    .hero__area .slick-list { overflow: hidden; padding: 0 !important; margin: 0 !important; }
 
     /* Category */
     .category__area .category__wrapper { gap: 10px; }
@@ -196,7 +188,7 @@
 
 /*----------  Extra Small Devices (Small Phones, <420px)  ----------*/
 @media (max-width: 419px) {
-    .container { padding-left: 8px; padding-right: 8px; }
+    .container { padding-left: 8px; padding-right: 6px; }
 
     /* Header */
     .header__bottom .logo img { max-width: 100px; }
@@ -313,6 +305,11 @@
     .profile__area .tab-content { padding: 15px 20px; }
     .product__review .review__card .card__top .review__count .count__item .count__bar { width: 120px; }
     .page-padding { padding: 0 20px; }
+
+    /* Hero */
+    .hero__area { height: 350px; overflow: hidden; }
+    .hero__area a { height: 350px; }
+    .hero__area a img { width: 100%; height: 100%; object-fit: cover; }
 }
 
 /*----------  Medium Devices (Tablets, 768px - 991px)  ----------*/
@@ -334,6 +331,11 @@
     .page-padding { padding: 0 30px; }
     .header__btn { gap: 18px; }
     .header__btn button { width: 38px; height: 38px; font-size: 18px; }
+
+    /* Hero */
+    .hero__area { height: 450px; overflow: hidden; }
+    .hero__area a { height: 450px; }
+    .hero__area a img { width: 100%; height: 100%; object-fit: cover; }
 }
 
 /*----------  Large Devices (Desktops, 992px - 1199px)  ----------*/
@@ -357,6 +359,11 @@
     .pro_btn form { flex: 1; min-width: 0; }
     .pro_btn form button.product_btn { width: 100%; border: none; cursor: pointer; }
     .product__review .review__card .card__top .review__count .count__item .count__bar { width: 180px; }
+
+    /* Hero */
+    .hero__area { height: 550px; overflow: hidden; }
+    .hero__area a { height: 550px; }
+    .hero__area a img { width: 100%; height: 100%; object-fit: cover; }
 }
 
 /*----------  Extra Large Devices (Desktops, 1200px+)  ----------*/
@@ -464,7 +471,7 @@
     .customer-section .success-table .table td,
     .customer-section .success-table .table th { padding: 8px; white-space: normal; }
     .customer-section .success-table .table td p,
-    .customer-section .success-table .table th p { margin-bottom: 2px; font-size: 12px; }
+    .customer-section .success-table .table th p { margin:0; font-size: 12px; }
     .customer-section .success-table .table td:last-child { width: auto; min-width: 80px; text-align: right; }
     .customer-section .success-table .table td:last-child strong { white-space: nowrap; }
     .customer-section .success-table .table tr:last-child td:last-child strong { font-size: 15px; }
