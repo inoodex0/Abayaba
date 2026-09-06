@@ -24,8 +24,8 @@
     <link rel="stylesheet" href="{{ asset('public/frontEnd/assets/css/ui-icon.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/frontEnd/assets/css/font-awesome-pro.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/frontEnd/assets/css/spacing.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/assets/css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/assets/css/responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/frontEnd/assets/css/style.css') }}?v={{ time() }}" />
+    <link rel="stylesheet" href="{{ asset('public/frontEnd/assets/css/responsive.css') }}?v={{ time() }}" />
     <!-- toastr css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     @stack('css')

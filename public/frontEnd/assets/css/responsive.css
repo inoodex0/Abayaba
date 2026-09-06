@@ -23,11 +23,13 @@
     /* Hero */
     .hero__area { overflow: hidden; }
     .hero__area a { display: block; width: 100%; }
-    .hero__area a img { width: 100%; height: auto; object-fit: unset; display: block; max-width: 100%; }
+    .hero__area a img { width: 100%; height: auto; object-fit: unset; display: block; }
     .hero__area .hero-slider { overflow: hidden; }
-    .hero__area .slick-track { width: 100% !important; transform: none !important; }
-    .hero__area .slick-slide { width: 100% !important; margin: 0 !important; }
-    .hero__area .slick-list { overflow: hidden; padding: 0 !important; margin: 0 !important; }
+    .hero__area .slick-list,
+    .hero__area .slick-track,
+    .hero__area .slick-slide { margin: 0 !important; padding: 0 !important; width: 100% !important; }
+    .hero__area .slick-list { overflow: hidden; }
+    .hero__area .slick-track { transform: none !important; }
 
     /* Category */
     .category__area .category__wrapper { gap: 10px; }
